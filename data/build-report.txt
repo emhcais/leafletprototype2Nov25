@@ -1,0 +1,20 @@
+{
+  "source_rows": 3137,
+  "records_exported": 3137,
+  "locations": 78,
+  "connections": 71,
+  "records_with_both_mapped": 924,
+  "origin_status": {
+    "unknown": 2099,
+    "mapped": 1001,
+    "unmapped_named": 37
+  },
+  "captivity_status": {
+    "unknown": 812,
+    "mapped": 2325
+  },
+  "corrected_tripoli_records": 66,
+  "removed_placeholder_records": 812,
+  "three_digit_years_corrected": 6,
+  "generated_utc": "2026-11-25T17:51:39Z"
+}

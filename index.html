@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An accessible historical atlas of European captives in the Mediterranean.">
+  <title>European Captives in the Mediterranean</title>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#map">Skip to map</a>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">Mapping Mediterranean Captivity</p>
+      <h1>European Captives in the Mediterranean</h1>
+      <p class="subtitle">Documented origins and places of captivity, c. 1500–1800</p>
+    </div>
+    <nav aria-label="Project actions">
+      <button id="help-button" class="button secondary" type="button">How to use this map</button>
+      <a class="button secondary" href="docs/quick-guide.html">Printable guide</a>
+      <a class="button" href="data/european-captives-complete.csv" download>Download complete dataset (CSV)</a>
+    </nav>
+  </header>
+
+  <section class="method-note" aria-label="Method note">
+    <strong>Reading the map:</strong> Markers show documented geographical associations. Missing markers do not remove a record from the catalogue. Connection lines show associations, not reconstructed journeys.
+  </section>
+
+  <main class="app-shell">
+    <aside class="controls" aria-label="Map controls">
+      <section>
+        <h2>Explore the map</h2>
+        <label for="search-input">Find a name or place</label>
+        <div class="search-row">
+          <input id="search-input" type="search" autocomplete="off" placeholder="For example: John Fox or Algiers">
+          <button id="clear-search" class="icon-button" type="button" aria-label="Clear search">Clear</button>
+        </div>
+      </section>
+
+      <fieldset>
+        <legend>What would you like to see?</legend>
+        <label class="choice"><input type="radio" name="map-mode" value="both" checked> <span><strong>Both</strong><small>Origins and captivity locations</small></span></label>
+        <label class="choice"><input type="radio" name="map-mode" value="captivity"> <span><strong>Places of captivity</strong><small>Where captives were documented</small></span></label>
+        <label class="choice"><input type="radio" name="map-mode" value="origin"> <span><strong>Places of origin</strong><small>Where captives came from</small></span></label>
+      </fieldset>
+
+      <section>
+        <label for="period-select">Explore by historical period</label>
+        <select id="period-select">
+          <option value="all">All dates</option>
+          <option value="1500">Sixteenth century (1500s)</option>
+          <option value="1600">Seventeenth century (1600s)</option>
+          <option value="1700">Eighteenth century (1700s)</option>
+          <option value="custom">Custom date range</option>
+        </select>
+        <div id="custom-dates" class="custom-dates" hidden>
+          <label>From year <input id="year-from" type="number" min="1500" max="1800" value="1500"></label>
+          <label>To year <input id="year-to" type="number" min="1500" max="1800" value="1800"></label>
+        </div>
+      </section>
+
+      <section>
+        <label for="basemap-select">Map appearance</label>
+        <select id="basemap-select">
+          <option value="english">English / international labels</option>
+          <option value="arabic">Arabic and local labels</option>
+          <option value="historical" disabled>Historical map — planned after source review</option>
+        </select>
+        <p id="basemap-note" class="hint">A clear modern basemap. Historical place names remain in the records.</p>
+      </section>
+
+      <details id="advanced-controls">
+        <summary>Advanced view</summary>
+        <label class="switch-row"><input id="connections-toggle" type="checkbox"> <span>Show documented connections</span></label>
+        <p class="hint">Connections are geographical associations, not travel routes.</p>
+      </details>
+
+      <div class="control-actions">
+        <button id="reset-button" class="button secondary" type="button">Reset map</button>
+        <button id="catalogue-button" class="button" type="button">View all captive records</button>
+      </div>
+    </aside>
+
+    <section class="map-region" aria-label="Interactive map and summary">
+      <div class="summary-bar" aria-live="polite">
+        <div><strong id="total-records">—</strong><span>Total records</span></div>
+        <div><strong id="known-origins">—</strong><span>Documented origins</span></div>
+        <div><strong id="known-captivity">—</strong><span>Documented captivity places</span></div>
+        <div><strong id="unknown-captivity">—</strong><span>Unknown captivity place</span></div>
+        <div class="matching"><strong id="matching-records">—</strong><span>Matching current filters</span></div>
+      </div>
+      <div id="map" role="application" aria-label="Map of documented captive locations"></div>
+      <div class="legend" aria-label="Map legend">
+        <h2>Map key</h2>
+        <p><span class="legend-symbol origin">◇</span> Place of origin</p>
+        <p><span class="legend-symbol captivity">●</span> Place of captivity</p>
+        <p><span class="legend-symbol both">◆</span> Both types at one location</p>
+        <p><span class="legend-line"></span> Documented association</p>
+      </div>
+      <p id="map-status" class="sr-only" aria-live="polite"></p>
+    </section>
+
+    <aside id="detail-panel" class="detail-panel" aria-label="Selected record or location" hidden>
+      <button id="close-detail" class="close-button" type="button" aria-label="Close details">×</button>
+      <div id="detail-content"></div>
+    </aside>
+  </main>
+
+  <dialog id="catalogue-dialog" class="catalogue-dialog" aria-labelledby="catalogue-title">
+    <div class="dialog-header">
+      <div>
+        <p class="eyebrow">Complete collection</p>
+        <h2 id="catalogue-title">Captive records</h2>
+      </div>
+      <button id="close-catalogue" class="close-button" type="button" aria-label="Close catalogue">×</button>
+    </div>
+    <div class="catalogue-tools">
+      <label for="catalogue-filter">Show records with</label>
+      <select id="catalogue-filter">
+        <option value="all">All records</option>
+        <option value="known-captivity">Known captivity location</option>
+        <option value="unknown-captivity">Unknown captivity location</option>
+        <option value="known-origin">Known origin</option>
+        <option value="unknown-origin">Unknown origin</option>
+        <option value="unmapped">Named but not yet mapped location</option>
+      </select>
+      <button id="clear-location-filter" class="button secondary small" type="button" hidden>Clear selected location</button>
+    </div>
+    <p id="catalogue-count" class="catalogue-count" aria-live="polite"></p>
+    <div id="catalogue-list" class="catalogue-list"></div>
+    <nav class="pagination" aria-label="Catalogue pages">
+      <button id="previous-page" class="button secondary" type="button">Previous</button>
+      <span id="page-status"></span>
+      <button id="next-page" class="button secondary" type="button">Next</button>
+    </nav>
+  </dialog>
+
+  <dialog id="help-dialog" class="help-dialog" aria-labelledby="help-title">
+    <div class="dialog-header">
+      <div>
+        <p class="eyebrow">Four-step guide</p>
+        <h2 id="help-title">How to use this map</h2>
+      </div>
+      <button id="close-help" class="close-button" type="button" aria-label="Close guide">×</button>
+    </div>
+    <div id="help-step" class="help-step"></div>
+    <div class="help-actions">
+      <button id="help-previous" class="button secondary" type="button">Previous</button>
+      <span id="help-progress" aria-live="polite"></span>
+      <button id="help-next" class="button" type="button">Next</button>
+    </div>
+    <label class="dont-show"><input id="dont-show-help" type="checkbox"> Do not show this introduction automatically again</label>
+  </dialog>
+
+  <noscript><p class="noscript">This interactive map needs JavaScript. The complete dataset remains available through the CSV download.</p></noscript>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

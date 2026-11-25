@@ -1,0 +1,80 @@
+﻿Original label,Standard name,Latitude,Longitude,Certainty,Review note
+Alicante,Alicante,38.3452,-0.481,high,Spain
+Amsterdam,Amsterdam,52.3676,4.9041,high,Netherlands
+Apson,,,,unresolved,Historical label not confidently identified
+Baltimore,Baltimore,51.484,-9.372,medium,"Interpreted as Baltimore, County Cork, Ireland"
+Barnstaple,Barnstaple,51.0802,-4.0581,high,"Devon, United Kingdom"
+Bermuda,Bermuda,32.3078,-64.7505,medium,Regional representative point
+Bideford,Bideford,51.0167,-4.2089,high,"Devon, United Kingdom"
+Boston,Boston,52.9789,-0.0266,low,"Interpreted as Boston, Lincolnshire; verify against source"
+Bridgwater,Bridgwater,51.1281,-3.0036,high,"Somerset, United Kingdom"
+Brighton,Brighton,50.8225,-0.1372,high,United Kingdom
+Bristol,Bristol,51.4545,-2.5879,high,United Kingdom
+Chatham,Chatham,51.3811,0.5269,medium,"Interpreted as Chatham, Kent, United Kingdom"
+Chester,Chester,53.1934,-2.8931,high,United Kingdom
+Christchurch,Christchurch,50.7358,-1.7782,medium,"Interpreted as Christchurch, Dorset"
+Colchester,Colchester,51.8959,0.8919,high,"Essex, United Kingdom"
+Coleraine,Coleraine,55.133,-6.668,high,"Northern Ireland, United Kingdom"
+Cork,Cork,51.8985,-8.4756,high,Ireland
+Cádiz,Cádiz,36.5297,-6.2927,high,Spain
+Dartmouth,Dartmouth,50.3525,-3.5794,high,"Devon, United Kingdom"
+Dorset,Dorset,50.7488,-2.3445,medium,County representative point
+Dover,Dover,51.1279,1.3134,high,"Kent, United Kingdom"
+Dublin,Dublin,53.3498,-6.2603,high,Ireland
+Dundee,Dundee,56.462,-2.9707,high,"Scotland, United Kingdom"
+Edinburgh,Edinburgh,55.9533,-3.1883,high,"Scotland, United Kingdom"
+Exeter,Exeter,50.7184,-3.5339,high,"Devon, United Kingdom"
+Falmouth,Falmouth,50.1526,-5.0663,high,"Cornwall, United Kingdom"
+Feloe,,,,unresolved,Historical label not confidently identified
+Foulston,Folkestone,51.0814,1.1695,low,Possible historical spelling of Folkestone; verify against source
+Fowey,Fowey,50.3363,-4.6386,high,"Cornwall, United Kingdom"
+Gallipoli,Gallipoli,40.055,17.992,low,"Interpreted as Gallipoli, Apulia, Italy; verify against source"
+Great Yarmouth,Great Yarmouth,52.6084,1.7305,high,"Norfolk, United Kingdom"
+Hampton,Hampton,51.4211,-0.3697,low,"Interpreted as Hampton, Middlesex; verify against source"
+Harwich,Harwich,51.9446,1.2864,high,"Essex, United Kingdom"
+Ipswich,Ipswich,52.0567,1.1482,high,"Suffolk, United Kingdom"
+Kingston upon Hull,Kingston upon Hull,53.7676,-0.3274,high,United Kingdom
+Kinsale,Kinsale,51.7059,-8.5222,high,Ireland
+Lisbon,Lisbon,38.7223,-9.1393,high,Portugal
+Liverpool,Liverpool,53.4084,-2.9916,high,United Kingdom
+London,London,51.5074,-0.1278,high,United Kingdom
+Low,,,,unresolved,Historical label not confidently identified
+Lyme Regis,Lyme Regis,50.7266,-2.9348,high,"Dorset, United Kingdom"
+Lyn,King's Lynn,52.7517,0.3952,low,Interpreted as King's Lynn; verify against source
+Madeira,Madeira,32.7607,-16.9595,medium,Regional representative point
+Mahón,Mahón,39.8885,4.2658,high,"Menorca, Spain"
+Millbrook,Millbrook,50.3495,-4.217,low,"Interpreted as Millbrook, Cornwall; verify against source"
+New England,New England,43.965,-71.53,low,Regional representative point; not a precise origin
+New York City,New York City,40.7128,-74.006,high,"New York, United States"
+Newcastle upon Tyne,Newcastle upon Tyne,54.9783,-1.6178,high,United Kingdom
+Newfoundland and Labrador,Newfoundland and Labrador,53.1355,-57.6604,low,Regional representative point; not a precise origin
+North Yarmouth,Yarmouth,50.705,-1.5,low,"Interpreted as Yarmouth, Isle of Wight; verify against source"
+Penzance,Penzance,50.1188,-5.5376,high,"Cornwall, United Kingdom"
+Plymouth,Plymouth,50.3755,-4.1427,high,"Devon, United Kingdom"
+Poole,Poole,50.7151,-1.9872,high,"Dorset, United Kingdom"
+Porto,Porto,41.1579,-8.6291,high,Portugal
+Portsmouth,Portsmouth,50.8198,-1.088,high,"Hampshire, United Kingdom"
+Rochel,La Rochelle,46.1603,-1.1511,medium,"Historical spelling interpreted as La Rochelle, France"
+Rye,Rye,50.9497,0.7373,high,"East Sussex, United Kingdom"
+Saltash,Saltash,50.4096,-4.2251,high,"Cornwall, United Kingdom"
+Sandwich,Sandwich,51.2743,1.338,high,"Kent, United Kingdom"
+Sanlúcar de Barrameda,Sanlúcar de Barrameda,36.7781,-6.3515,high,Spain
+Selborne,Selborne,51.096,-0.941,high,"Hampshire, United Kingdom"
+Sidmouth,Sidmouth,50.68,-3.2397,high,"Devon, United Kingdom"
+Southampton,Southampton,50.9097,-1.4044,high,United Kingdom
+Split,Split,43.5081,16.4402,high,Croatia
+St. Fillo,,,,unresolved,Historical label not confidently identified
+St. Martin Parish,Saint Martin,49.435,-2.576,low,"Interpreted as Saint Martin, Guernsey; verify against source"
+St. Martin's,,,,unresolved,Multiple plausible places; retained in catalogue only
+St.Urbes,,,,unresolved,Historical label not confidently identified
+Stockton,Stockton-on-Tees,54.5705,-1.3187,low,Interpreted as Stockton-on-Tees; verify against source
+Swansea,Swansea,51.6214,-3.9436,high,"Wales, United Kingdom"
+Terceras,Terceira,38.7216,-27.2206,medium,Historical plural interpreted as Terceira/Azores; representative point
+Topsham,Topsham,50.685,-3.466,high,"Devon, United Kingdom"
+Tunis,Tunis,36.8065,10.1815,high,Tunisia
+Warom,,,,unresolved,Historical label not confidently identified
+Watchet,Watchet,51.1817,-3.329,high,"Somerset, United Kingdom"
+Waterford,Waterford,52.2593,-7.1101,high,Ireland
+Weymouth,Weymouth,50.609,-2.4543,high,"Dorset, United Kingdom"
+Worcester,Worcester,52.1936,-2.2216,high,United Kingdom
+Yahall,Youghal,51.9517,-7.8456,medium,"Historical spelling interpreted as Youghal, Ireland"
